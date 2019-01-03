@@ -12,7 +12,7 @@ const LinkedList = (function () {
   /**
    * @desc Creates a new LinkedList
    * @class
-   * @classdesc This is a description of LinkedList class
+   * @classdesc This is a description of the LinkedList class
    */
   return class {
     /**
@@ -36,11 +36,12 @@ const LinkedList = (function () {
      * @return {*}
      */
     getHead () {
+      if (!head) throw new Error('The LinkedList is empty')
       return head.element
     }
 
     /**
-     * @desc Get the position of the element in the LinkedList
+     * @desc Get the position of the element in the LinkedList from head to tail
      * @param {*} element - The element need to to be position
      * @return {number} - The position of the element
      */
@@ -67,7 +68,7 @@ const LinkedList = (function () {
       const linkedListElement = new LinkedListElement(element)
 
       if (head === null) {
-        head =linkedListElement
+        head = linkedListElement
       } else {
         let current = head
 
@@ -89,7 +90,7 @@ const LinkedList = (function () {
      */
     insert (element, position) {
       // 判断是否越界
-      if (position < 0 || position >= length) throw new Error('The position is out of the LinkedList')
+      if (position < 0 || position > length) throw new Error('The position is out of the LinkedList')
 
       const linkedListElement = new LinkedListElement(element)
       let current = head
@@ -166,8 +167,6 @@ const LinkedList = (function () {
 
       return str
     }
-
-    print () {}
   }
 })()
 
