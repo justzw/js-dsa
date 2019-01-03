@@ -1,4 +1,4 @@
-class DoublyLinkedListEle {
+class Node {
   constructor (element) {
     this.element = element
     this.prev = null
@@ -96,11 +96,11 @@ const DoublyLinkedList = (function () {
      * @return {number} - The amount of the elements in the DoublyLinkedList
      */
     append (element) {
-      const doublyLinkedListEle = new DoublyLinkedListEle(element)
+      const node = new Node(element)
 
       if (head === null) {
-        head = doublyLinkedListEle
-        tail = doublyLinkedListEle
+        head = node
+        tail = node
       } else {
         let current = head
 
@@ -108,9 +108,9 @@ const DoublyLinkedList = (function () {
           current = current.next
         }
 
-        doublyLinkedListEle.prev = current
-        current.next = doublyLinkedListEle
-        tail = doublyLinkedListEle
+        node.prev = current
+        current.next = node
+        tail = node
       }
 
       return ++length
@@ -125,18 +125,18 @@ const DoublyLinkedList = (function () {
     insert (element, position) {
       if (position < 0 || position > length) throw new Error('The position is out of the DoublyLinkedList')
 
-      const doublyLinkedListEle = new DoublyLinkedListEle(element)
+      const node = new Node(element)
       let current = head
       let previous = null
 
       if (position === 0) {
-        doublyLinkedListEle.next = current
-        head = doublyLinkedListEle
+        node.next = current
+        head = node
       } else if (position === length) {
         current = tail
-        current.next = doublyLinkedListEle
-        doublyLinkedListEle.prev = current
-        tail = doublyLinkedListEle
+        current.next = node
+        node.prev = current
+        tail = node
       } else {
         if (position === length - 1) {
           current = tail
@@ -148,11 +148,11 @@ const DoublyLinkedList = (function () {
           }
         }
 
-        doublyLinkedListEle.prev = previous
-        doublyLinkedListEle.next = current
+        node.prev = previous
+        node.next = current
 
-        previous.next = doublyLinkedListEle
-        current.prev = doublyLinkedListEle
+        previous.next = node
+        current.prev = node
       }
 
       return ++length

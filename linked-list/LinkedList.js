@@ -1,4 +1,4 @@
-class LinkedListElement {
+class Node {
   constructor (element) {
     this.element = element
     this.next = null
@@ -65,10 +65,10 @@ const LinkedList = (function () {
      * @return {number} - The amount of the elements in the LinkedList
      */
     append (element) {
-      const linkedListElement = new LinkedListElement(element)
+      const node = new Node(element)
 
       if (head === null) {
-        head = linkedListElement
+        head = node
       } else {
         let current = head
 
@@ -76,7 +76,7 @@ const LinkedList = (function () {
           current = current.next
         }
 
-        current.next = linkedListElement
+        current.next = node
       }
 
       return ++length
@@ -92,21 +92,21 @@ const LinkedList = (function () {
       // 判断是否越界
       if (position < 0 || position > length) throw new Error('The position is out of the LinkedList')
 
-      const linkedListElement = new LinkedListElement(element)
+      const node = new Node(element)
       let current = head
       let previous = null
 
       if (position === 0) {
-        linkedListElement.next = current
-        head = linkedListElement
+        node.next = current
+        head = node
       } else {
         for (let i = 0; i < position; i++) {
           previous = current
           current = current.next
         }
 
-        previous.next = linkedListElement
-        linkedListElement.next = current
+        previous.next = node
+        node.next = current
       }
 
       return ++length
