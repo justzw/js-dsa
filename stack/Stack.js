@@ -13,7 +13,7 @@ const Stack = (function () {
     }
 
     /**
-     * @desc Judge the whether the Stack is empty
+     * @desc Judge whether the Stack is empty
      * @return {boolean}
      */
     isEmpty () {
@@ -21,7 +21,7 @@ const Stack = (function () {
     }
 
     /**
-     * @desc Get the amount of the elements in Stack
+     * @desc Get amount of the elements in the Stack
      * @return {number}
      */
     size () {
@@ -29,7 +29,7 @@ const Stack = (function () {
     }
 
     /**
-     * @desc Get the element in the Stack top
+     * @desc Get element in the top of the Stack
      * @return {*}
      */
     peek () {
@@ -37,9 +37,9 @@ const Stack = (function () {
     }
 
     /**
-     * @desc Add elements to the Stack top
-     * @param {...*} elements - The elements add to stack top
-     * @return {number} - The amount of the elements in Stack
+     * @desc Add elements to the top of the Stack
+     * @param {...*} elements - The elements add to the top of the stack
+     * @return {number} - The amount of the elements in the Stack
      */
 
     push (...elements) {
@@ -47,8 +47,8 @@ const Stack = (function () {
     }
 
     /**
-     * @desc Remove element in the Stack top
-     * @return {*} - The element in the Stack top
+     * @desc Remove element in the top of the Stack
+     * @return {*} - The element in the top of the Stack
      */
     pop () {
       return _items.pop()

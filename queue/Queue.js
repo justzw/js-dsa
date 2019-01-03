@@ -5,7 +5,7 @@ const Queue = (function () {
   /**
    * @desc Creates a new Queue
    * @class
-   * @classdesc This is a description of Queue class
+   * @classdesc This is a description of the Queue class
    */
   return class {
     constructor (...elements) {
@@ -13,7 +13,7 @@ const Queue = (function () {
     }
 
     /**
-     * @desc Judge the whether the Queue is empty
+     * @desc Judge whether the Queue is empty
      * @return {boolean}
      */
     isEmpty () {
@@ -21,7 +21,7 @@ const Queue = (function () {
     }
 
     /**
-     * @desc Get the amount of the elements in Queue
+     * @desc Get amount of the elements in the Queue
      * @return {number}
      */
     size () {
@@ -29,7 +29,7 @@ const Queue = (function () {
     }
 
     /**
-     * @desc Get the first elements is Queue
+     * @desc Get element in the head of the Queue
      * @return {*}
      */
     front () {
@@ -37,8 +37,8 @@ const Queue = (function () {
     }
 
     /**
-     * @desc Add elements to the Queue tail
-     * @param {...*} elements - The elements add to Queue tail
+     * @desc Add elements to the tail of the Queue
+     * @param {...*} elements - The elements add to the tail of the Queue
      * @return {number} - The amount of the elements in the Queue
      */
     enqueue (...elements) {
@@ -46,8 +46,8 @@ const Queue = (function () {
     }
 
     /**
-     * @desc Remove element in the Queue head
-     * @return {*} - The element in the Queue head
+     * @desc Remove element in the head of the Queue
+     * @return {*} - The element in the head of the Queue
      */
     dequeue () {
       return _items.shift()

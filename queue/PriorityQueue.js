@@ -12,11 +12,11 @@ const PriorityQueue = (function () {
   /**
    * @desc Creates a new PriorityQueue
    * @class
-   * @classdesc This is a description of PriorityQueue class
+   * @classdesc This is a description of the PriorityQueue class
    */
   return class {
     /**
-     * @desc Judge the whether the PriorityQueue is empty
+     * @desc Judge whether the PriorityQueue is empty
      * @return {boolean}
      */
     isEmpty () {
@@ -24,7 +24,7 @@ const PriorityQueue = (function () {
     }
 
     /**
-     * @desc Get the amount of the elements in PriorityQueue
+     * @desc Get amount of the elements in the PriorityQueue
      * @return {number}
      */
     size () {
@@ -32,7 +32,7 @@ const PriorityQueue = (function () {
     }
 
     /**
-     * @desc Get the first elements is PriorityQueue
+     * @desc Get element in the head of the PriorityQueue
      * @return {*}
      */
     front () {
@@ -46,28 +46,28 @@ const PriorityQueue = (function () {
      * @return {number} - The amount of the elements in the PriorityQueue
      */
     enqueue (element, priority) {
+      const queueElement = new QueueElement(element, priority)
       let addIndex = -1
 
-      element = new QueueElement(element, priority)
       _items.forEach((item, index) => {
         // 最小优先队列
-        if (element.priority < item.priority) addIndex = index
+        if (queueElement.priority < item.priority) addIndex = index
         // 最大优先队列
-        // if (element.priority > item.priority) addIndex = index
+        // if (queueElement.priority > item.priority) addIndex = index
       })
 
       if (addIndex !== -1) {
-        _items.splice(addIndex, 0, element)
+        _items.splice(addIndex, 0, queueElement)
       } else {
-        _items.push(element)
+        _items.push(queueElement)
       }
 
       return _items.length
     }
 
     /**
-     * @desc Remove element in the PriorityQueue head
-     * @return {*} - The element in the PriorityQueue head
+     * @desc Remove element in the head of the PriorityQueue
+     * @return {*} - The element in the head of the PriorityQueue
      */
     dequeue () {
       return _items.shift()
@@ -75,7 +75,7 @@ const PriorityQueue = (function () {
 
     /**
      * @desc Remove all the elements in the PriorityQueue
-     * @return {Queue}
+     * @return {PriorityQueue}
      */
     clear () {
       _items = []
