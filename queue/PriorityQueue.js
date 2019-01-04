@@ -5,7 +5,7 @@ class QueueElement {
   }
 }
 
-const PriorityQueue = (function () {
+const PriorityQueueOuter = function () {
   /** Simulate private variable */
   let _items = []
 
@@ -14,7 +14,7 @@ const PriorityQueue = (function () {
    * @class
    * @classdesc This is a description of the PriorityQueue class
    */
-  return class {
+  class PriorityQueue {
     /**
      * @desc Judge whether the PriorityQueue is empty
      * @return {boolean}
@@ -90,6 +90,8 @@ const PriorityQueue = (function () {
       console.log(_items.map(item => item.element).toString())
     }
   }
-})()
 
-export default PriorityQueue
+  return new PriorityQueue()
+}
+
+export default PriorityQueueOuter

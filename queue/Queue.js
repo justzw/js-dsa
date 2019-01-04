@@ -1,4 +1,4 @@
-const Queue = (function () {
+const QueueOuter = function (...elements) {
   /** Simulate private variable */
   let _items = []
 
@@ -7,7 +7,7 @@ const Queue = (function () {
    * @class
    * @classdesc This is a description of the Queue class
    */
-  return class {
+  class Queue {
     constructor (...elements) {
       _items = [..._items, ...elements]
     }
@@ -70,6 +70,8 @@ const Queue = (function () {
       console.log(_items.toString())
     }
   }
-})()
 
-export default Queue
+  return new Queue(...elements)
+}
+
+export default QueueOuter

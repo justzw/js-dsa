@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-const LinkedList = (function () {
+const LinkedListOuter = function () {
   let length = 0
   let head = null
 
@@ -14,7 +14,7 @@ const LinkedList = (function () {
    * @class
    * @classdesc This is a description of the LinkedList class
    */
-  return class {
+  class LinkedList {
     /**
      * @desc Judge whether the LinkedList is empty
      * @return {number}
@@ -168,6 +168,8 @@ const LinkedList = (function () {
       return str
     }
   }
-})()
 
-export default LinkedList
+  return new LinkedList()
+}
+
+export default LinkedListOuter

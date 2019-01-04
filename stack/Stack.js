@@ -1,4 +1,4 @@
-const Stack = (function () {
+const StackOuter = function (...elements) {
   /** Simulate private variable */
   let _items = []
 
@@ -7,7 +7,7 @@ const Stack = (function () {
    * @class
    * @classdesc This is a description of the Stack class
    */
-  return class {
+  class Stack {
     constructor (...elements) {
       _items = [..._items, ...elements]
     }
@@ -71,6 +71,8 @@ const Stack = (function () {
       console.log(_items.toString())
     }
   }
-})()
 
-export default Stack
+  return new Stack(...elements)
+}
+
+export default StackOuter

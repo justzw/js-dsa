@@ -7,7 +7,7 @@ class Node {
 }
 
 
-const DoublyLinkedList = (function () {
+const DoublyLinkedListOuter = function () {
   let length = 0
   let head = null
   let tail = null
@@ -17,7 +17,7 @@ const DoublyLinkedList = (function () {
    * @class
    * @classdesc This is a description of the DoublyLinkedList class
    */
-  return class {
+  class DoublyLinkedList {
     /**
      * @desc Judge whether the DoublyLinkedList is empty
      * @return {number}
@@ -225,6 +225,8 @@ const DoublyLinkedList = (function () {
       return str
     }
   }
-})()
 
-export default DoublyLinkedList
+  return new DoublyLinkedList()
+}
+
+export default DoublyLinkedListOuter
